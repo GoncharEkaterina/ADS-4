@@ -10,7 +10,7 @@ int countPairs1(int *arr, int len, int value) {
   for (int i = 0; i < len; i++) {
     for (int j = i + 1; j < len; j++) {
       if (i != j) {
-        if (arr[i] + arr[j] == value) 
+        if (arr[i] + arr[j] == value)
           count++;
       }
     }
@@ -44,7 +44,8 @@ int countPairs2(int *arr, int len, int value) {
 }
 
 int countPairs3(int *arr, int len, int value) {
-  int left = 0, right = len - 1, sum = arr[left] + arr[right], count = 0;
+  int left = 0, right = len - 1;
+  int sum = arr[left] + arr[right], count = 0;
   while (left != right) {
     if (arr[left] + arr[right] < value) {
       left++;
@@ -56,17 +57,5 @@ int countPairs3(int *arr, int len, int value) {
     }
   }
   return count;
-  return 0;
-}
-
-int main() {
-  int lenght = 0, mean = 0;
-  std::cin >> lenght >> mean;
-  int* arr = new int[lenght];
-  for (int h = 0; h < lenght; h++) {
-    std::cin >> arr[h];
-  }
-  std::sort(arr, arr + lenght);
-  std::cout << countPairs1(arr, lenght, mean) << " " << countPairs2(arr, lenght, mean) << " " << countPairs3(arr, lenght, mean);
   return 0;
 }
